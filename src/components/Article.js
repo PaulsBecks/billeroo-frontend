@@ -12,6 +12,7 @@ export default function Article({
   authorsEnabled = true,
 }) {
   const [articlePrice, setArticlePrice] = useState(article.price);
+  const [articleVat, setArticleVat] = useState(article.vat || "19,00");
   const [
     ,
     ,
@@ -32,6 +33,15 @@ export default function Article({
       }
       value = formatPrice(value);
       setArticlePrice(value);
+    }
+    if (name === "vat") {
+      value = parseFloat(value.replace(",", "."));
+      if (isNaN(value)) {
+        setArticlePrice("0,00");
+        return;
+      }
+      value = formatPrice(value);
+      setArticleVat(value);
     }
     setArticle({ ...article, [name]: value });
   };
@@ -120,6 +130,19 @@ export default function Article({
             });
           }}
           value={articlePrice}
+        />
+        <Form.Field
+          id="form-input-control-last-name"
+          control={Input}
+          label="Umsatzsteuer"
+          placeholder="19,00"
+          name="vat"
+          icon="percent"
+          onChange={(e, { value }) => setArticleVat(value)}
+          onBlur={(e) => {
+            handleArticleChange(e, e.target);
+          }}
+          value={articleVat}
         />
       </Form.Group>
       {authorsEnabled && (

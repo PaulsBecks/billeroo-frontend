@@ -66,7 +66,6 @@ export default () => {
             <Table.HeaderCell>Rechnungsadresse</Table.HeaderCell>
             <Table.HeaderCell>Lieferadresse</Table.HeaderCell>
             <Table.HeaderCell>Rabatt</Table.HeaderCell>
-            <Table.HeaderCell>MwST</Table.HeaderCell>
             <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
@@ -82,7 +81,6 @@ export default () => {
                 <div dangerouslySetInnerHTML={{ __html: c.shippingAddress }} />
               </Table.Cell>
               <Table.Cell>{c.discount}</Table.Cell>
-              <Table.Cell>{c.ust}</Table.Cell>
               <Table.Cell>
                 <Button
                   onClick={() => setCustomer(c)}

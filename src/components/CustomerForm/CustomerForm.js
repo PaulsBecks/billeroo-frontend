@@ -76,15 +76,6 @@ export default function CustomerForm({ customer, setCustomer }) {
       <Form.Group>
         <Form.Field
           control={Input}
-          label="MwST"
-          placeholder="7"
-          name="ust"
-          icon="percent"
-          onChange={handleCustomerChange}
-          value={customer.ust}
-        />
-        <Form.Field
-          control={Input}
           label="Kundenrabatt"
           placeholder="0"
           icon="percent"
