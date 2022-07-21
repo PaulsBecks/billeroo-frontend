@@ -31,7 +31,7 @@ const SinglePage = ({
         totalPriceWithDiscount / (1 + parsePrice(vat) / 100)
       );
       const ust = roundPrice(totalPriceWithDiscount - net);
-      return [net, ust, vat];
+      return [net, ust, parsePrice(vat)];
     })
     .reduce(
       ([netSum, uSTSum, maxVat], [net, ust, vat]) => [

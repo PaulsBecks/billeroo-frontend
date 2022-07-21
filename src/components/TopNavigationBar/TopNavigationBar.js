@@ -60,7 +60,7 @@ export default function TopNavigationBar() {
           )}
           <Button
             size="large"
-            className="oi-top-navigation-bar-new-invoice"
+            className="oi-top-navigation-bar-new-invoice billeroo-top-navigation-new-invoice-button"
             content="Neue Rechnung"
             onClick={() => history.push("/invoices/new")}
             secondary

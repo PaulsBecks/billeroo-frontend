@@ -47,7 +47,7 @@
   }
 }
 @media (max-width: 720px) {
-  .billeroo-top-navigation-sign-in-button {
+  .billeroo-top-navigation-new-invoice-button {
     display: none !important;
   }
 }
