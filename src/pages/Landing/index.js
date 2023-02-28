@@ -27,6 +27,8 @@ export default function LandingPage() {
                 Erstelle schnell und einfach Rechnungen für deinen Verlag.
                 Behalte den Überblick deiner bereits angelegte Rechnungen auf
                 allen Geräten.
+                <br />
+                Bitte nutze diese Seite nur mit der Erlaubnis des erstellers.
               </p>
               <Button
                 content="Rechnung erstellen"

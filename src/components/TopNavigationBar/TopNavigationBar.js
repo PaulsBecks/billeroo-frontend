@@ -16,7 +16,7 @@ export default function TopNavigationBar() {
   const [loginValues, setLoginValues] = useState({ email: "", password: "" });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [user, setUser] = useUser();
-  const [modalUse, setModalUse] = useState("register");
+  const [modalUse, setModalUse] = useState("login");
   const [error, setError] = useState("");
   const isLoggedIn = user && user.user && !user.user.placeholder;
 
@@ -86,15 +86,6 @@ export default function TopNavigationBar() {
                 inverted
                 basic
               />
-              <Button
-                className="oi-top-navigation-bar-new-invoice"
-                onClick={() => {
-                  setModalIsOpen(true);
-                  setModalUse("register");
-                }}
-                content="Registrieren"
-                inverted
-              />
             </div>
           )}
           <Modal
@@ -104,14 +95,11 @@ export default function TopNavigationBar() {
               setError("");
             }}
           >
-            <Modal.Header>
-              {modalUse === "login" ? "Anmelden" : "Registrieren"}
-            </Modal.Header>
+            <Modal.Header>Anmelden</Modal.Header>
             <Modal.Content>
               <Message info>
-                {modalUse === "login"
-                  ? "Melden Sie sich an, um diesen Browser mit Ihren Daten zu synchronisieren."
-                  : "Registrieren Sie sich, um Ihre Daten auch auf anderen Geräten zu nutzen."}
+                Melden Sie sich an, um diesen Browser mit Ihren Daten zu
+                synchronisieren.
               </Message>
               {error && <Message error>{error}</Message>}
               <Form>
@@ -140,19 +128,8 @@ export default function TopNavigationBar() {
                   onClick={async () => {
                     let user;
                     try {
-                      if (modalUse === "login") {
-                        user = await login(loginValues);
-                        await localStorage.setItem(
-                          "user",
-                          JSON.stringify(user)
-                        );
-                      } else {
-                        user = await register(loginValues);
-                        await localStorage.setItem(
-                          "user",
-                          JSON.stringify(user)
-                        );
-                      }
+                      user = await login(loginValues);
+                      await localStorage.setItem("user", JSON.stringify(user));
                       setUser(user);
                       setModalIsOpen(false);
                       window.document.location.href = "/";
@@ -161,7 +138,7 @@ export default function TopNavigationBar() {
                     }
                   }}
                 >
-                  {modalUse === "login" ? "Anmelden" : "Registrieren"}
+                  Anmelden
                   <Icon name="right chevron" />
                 </Button>
               </Form>

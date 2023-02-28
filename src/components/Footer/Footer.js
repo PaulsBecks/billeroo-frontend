@@ -10,16 +10,6 @@ export default function Footer() {
       <div className="billeroo-footer-row">
         <div className="billeroo-footer-column">
           <div className="billeroo-footer-cell">
-            <h3>Social Media</h3>
-            <ul>
-              <li>
-                <a href="https://www.instagram.com/billeroo.de/">
-                  <Icon name="instagram" /> Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="billeroo-footer-cell">
             <h3>Entdecke Billeroo</h3>
             <ul>
               <li>
@@ -34,50 +24,12 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        <div className="billeroo-footer-column">
-          <div className="billeroo-footer-cell">
-            <h3>Kontakt</h3>
-            <p>
-              <Icon name="mail" />
-              service@billeroo.de <br />
-            </p>
-            <p>
-              <Icon name="phone" />
-              +49 152 06555043
-              <br />
-            </p>
-            <p>
-              Billeroo Software Paul Beck
-              <br />
-              Kniprodestraße 22
-              <br />
-              10407 Berlin
-              <br />
-              Deutschland
-            </p>
-          </div>
-        </div>
-
-        <div className="billeroo-footer-column">
-          <div className="billeroo-footer-cell">
-            <h3>Rechtliches</h3>
-            <ul>
-              <li>
-                <Link to="/imprint">Impressum</Link>
-              </li>
-              <li>
-                <Link to="/dataprotection">Datenschutzerklärung</Link>
-              </li>
-              <li>
-                <Link to="/agb">AGB</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
       <div className="billeroo-footer-row">
-        <p>Made with ❤ by Billeroo</p>
+        <p>
+          This is a private page please do not use if you do not have permission
+          by the owner.
+        </p>
       </div>
     </div>
   );
